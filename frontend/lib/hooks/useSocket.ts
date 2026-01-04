@@ -56,6 +56,7 @@ export const useSocket = () => {
     // Cleanup on unmount
     return () => {
       if (socket) {
+        socket.removeAllListeners();
         socket.disconnect();
       }
     };
